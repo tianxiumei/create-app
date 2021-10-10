@@ -1,0 +1,29 @@
+{
+  "name": "create-app",
+  "version": "1.0.0",
+  "main": "lib/index.js",
+  "license": "MIT",
+  "bin": {
+    "create-app": "./bin/run"
+  },
+  "scripts": {
+    "prepack": "rm -rf lib && tsc -b",
+    "dev": "./bin/run dev",
+    "build": "yarn run prepack",
+    "lint": "exit 0"
+  },
+  "devDependencies": {
+    "@types/node": "^16.10.3",
+    "@types/yeoman-environment": "^2.10.5",
+    "ts-node": "^10.2.1",
+    "typescript": "^4.4.3",
+    "yeoman-environment": "^3.6.0",
+    "yeoman-generator": "^5.4.2"
+  },
+  "dependencies": {
+    "@oclif/command": "^1.8.0",
+    "fs": "^0.0.1-security",
+    "lodash": "^4.17.21",
+    "yosay": "^2.0.2"
+  }
+}

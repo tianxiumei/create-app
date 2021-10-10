@@ -1,0 +1,12 @@
+#!/usr/bin/env node
+
+const _ = require('lodash')
+const path = require('path')
+const project = path.join(__dirname, '../tsconfig.json')
+const isDev = _.get(process, ['argv', 2]) === 'dev'
+if (isDev) {
+  require('ts-node').register({ project })
+}
+require(`../${isDev ? 'src' : 'lib'}`)
+  .run()
+  .catch(require('@oclif/errors/handle'))
