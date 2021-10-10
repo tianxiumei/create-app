@@ -7,7 +7,7 @@
     "create-app": "./bin/run"
   },
   "scripts": {
-    "prepack": "rm -rf lib && tsc -b",
+    "prepack": "rm -rf lib && tsc -b && cp -Rf src/generators/templates lib/generators/templates",
     "dev": "./bin/run dev",
     "build": "yarn run prepack",
     "lint": "exit 0"
